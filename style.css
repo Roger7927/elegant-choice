@@ -1,0 +1,93 @@
+:root {
+    --matte-black: #121212;
+    --rich-gold: #D4AF37;
+    --pale-gold: #F1E5AC;
+    --text-white: #E0E0E0;
+    --card-bg: #1e1e1e;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--matte-black);
+    color: var(--text-white);
+    font-family: var(--font-body);
+}
+
+.header {
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--rich-gold);
+}
+
+.header h1 {
+    font-family: var(--font-heading);
+    color: var(--rich-gold);
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.divider-line {
+    width: 100px; height: 2px; background: var(--rich-gold); margin: 20px auto;
+}
+
+.header p { color: var(--pale-gold); letter-spacing: 3px; font-size: 0.9rem; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--rich-gold);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
+
+.product-image-container { background: #000; padding: 20px; }
+.product-image { width: 100%; display: block; opacity: 0.8; }
+
+.product-info { padding: 30px; text-align: center; }
+
+.product-title {
+    font-family: var(--font-heading);
+    color: var(--rich-gold);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-tagline { font-size: 0.8rem; margin-bottom: 25px; opacity: 0.7; }
+
+.btn-luxury {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--rich-gold);
+    color: var(--rich-gold);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+
+.btn-luxury:hover {
+    background: var(--rich-gold);
+    color: var(--matte-black);
+}
+
+.footer { padding: 40px; text-align: center; font-size: 0.7rem; border-top: 1px solid rgba(212, 175, 55, 0.1); }
