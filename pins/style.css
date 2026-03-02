@@ -1,27 +1,33 @@
-/* Forçando todas as imagens a obedecerem ao tamanho do card */
-.perfume-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    margin-bottom: 20px;
-}
+/* (c) 2026 Guillermo Roger Hernandez Chandia - ADS */
 
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 50px;
-}
-
-.perfume-card {
-    border: 1px solid #eee;
-    padding: 20px;
+/* 1. Estilização do Header que criámos no HTML */
+.header-chic {
     text-align: center;
-    width: 250px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-bottom: 5px solid #D4AF37; /* Moldura de ouro */
+    margin-bottom: 30px;
 }
 
-.price {
-    color: #b8860b;
-    font-weight: bold;
+.header-chic h1 {
+    color: #D4AF37;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* 2. Estilização do Botão Shop Now (Links de Afiliado) */
+.btn-luxury {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-luxury:hover {
+    background-color: #D4AF37;
+    color: #000;
 }
