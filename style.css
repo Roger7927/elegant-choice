@@ -1,80 +1,76 @@
-/* Reset Total para Foco no Produto */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: #000000; /* Preto Absoluto */
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+:root {
+    --gold: #D4AF37;
+    --black-matte: #121212;
+    --dark-gray: #1a1a1a;
 }
 
-/* Header Imponente */
+body {
+    background-color: var(--black-matte);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
 .header {
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #000, var(--black-matte));
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 10vw, 6rem); /* Tamanho Dinâmico */
-    color: #D4AF37; /* Ouro */
-    letter-spacing: 20px;
-    text-transform: uppercase;
-}
-
-/* Layout de Exposição (Um por um, Gigante) */
-.product-section {
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 150px; /* Espaço entre os perfumes */
-}
-
-.product-display {
-    width: 100%;
-    max-width: 1000px;
-    text-align: center;
-}
-
-/* FOTO GIGANTE - O CORAÇÃO DO SITE */
-.product-display img {
-    width: 90%;
-    max-width: 700px; /* Aumentamos o limite */
-    height: auto;
-    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.3)); /* Brilho dourado */
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.product-display:hover img {
-    transform: scale(1.08) translateY(-20px);
-}
-
-h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    color: #D4AF37;
-    margin-top: 40px;
+    font-size: 3.5rem;
+    color: var(--gold);
     letter-spacing: 5px;
+    margin: 0;
 }
 
-.btn-buy {
-    margin-top: 30px;
-    padding: 20px 60px;
-    border: 2px solid #D4AF37;
-    color: #D4AF37;
+.divider-line {
+    width: 100px;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 20px auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-card {
+    background-color: var(--dark-gray);
+    border: 1px solid #333;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-10px);
+}
+
+.product-image {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.btn-luxury {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     text-decoration: none;
     font-weight: bold;
-    letter-spacing: 5px;
-    transition: 0.4s;
+    margin-top: 20px;
 }
 
-.btn-buy:hover {
-    background-color: #D4AF37;
-    color: #000;
+.btn-luxury:hover {
+    background-color: var(--gold);
+    color: black;
 }
