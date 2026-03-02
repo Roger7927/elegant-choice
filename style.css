@@ -1,93 +1,88 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-.header { padding: 120px 20px 80px; }
-
-h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 12vw, 6rem);
-    color: #D4AF37;
-    letter-spacing: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.gold-line {
-    width: 120px;
-    height: 1px;
-    background-color: #D4AF37;
-    margin: 40px auto;
-    opacity: 0.6;
-}
-
-.subtitle {
-    letter-spacing: 8px;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    text-transform: uppercase;
-}
-
+/* Estilos existentes para a vitrine e cards (presumidos do layout) */
 .showcase {
     display: flex;
-    flex-direction: column;
-    gap: 180px; /* Espaço de grife entre produtos */
-    padding-bottom: 200px;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os cards */
+    padding: 60px 20px 100px;
+    background-color: #000;
 }
 
 .product-card {
-    width: 100%;
+    flex: 1;
+    max-width: 300px; /* Largura máxima para os cards */
+    background-color: #000;
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Borda ouro sutil */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-/* FOTOS MONUMENTAIS */
-.product-card img {
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #D4AF37; /* Borda ouro mais forte no hover */
+}
+
+/* --- Wrapper da Imagem (A Chave para o Equilíbrio) --- */
+.card-image-wrapper {
     width: 100%;
-    max-width: 750px; /* Impacto real */
-    height: auto;
-    filter: drop-shadow(0 20px 70px rgba(212, 175, 55, 0.18));
-    transition: transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+    height: 400px; /* Altura definida para acomodar o Idôle alto */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom: 25px;
+    overflow: hidden; /* Garante que a escala não transborde */
 }
 
-.product-card:hover img {
-    transform: scale(1.04);
+.card-image {
+    object-fit: contain; /* Mantém proporções, cabe dentro */
+    max-width: 100%;
+    max-height: 100%;
 }
 
-h3 {
+/* --- Ajuste Específico para Equilibrar Scandal e Libre --- */
+.card-scandal .card-image,
+.card-libre .card-image {
+    /* Aumenta "só um pouco" (10%) para equilibrar com o Idôle */
+    transform: scale(1.10);
+    /* Mantém a centralização flexbox */
+}
+
+/* Estilos para Títulos e Descrições */
+.card-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: 2rem;
     color: #D4AF37;
-    margin: 60px 0 35px;
-    letter-spacing: 6px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
     font-weight: 600;
 }
 
-.luxury-btn {
+.card-description {
+    color: #ffffff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* Estilos para o Botão (do código original) */
+.view-amazon-btn {
     display: inline-block;
-    padding: 25px 90px;
+    padding: 15px 45px;
     border: 1px solid #D4AF37;
     color: #D4AF37;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 6px;
+    font-weight: bold;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    transition: all 0.5s ease;
+    transition: 0.4s;
+    background: transparent;
 }
 
-.luxury-btn:hover {
+.view-amazon-btn:hover {
     background-color: #D4AF37;
     color: #000;
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
 }
-
-.footer { padding: 100px; opacity: 0.3; font-size: 0.7rem; letter-spacing: 4px; }
