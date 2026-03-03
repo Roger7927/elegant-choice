@@ -1,116 +1,74 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; text-align: center; }
 
-body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-.header { padding: 120px 20px 80px; }
+.luxury-bar { width: 100%; height: 5px; background: #C5A059; margin-bottom: 20px; }
+.main-header { padding: 60px 20px 40px; }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 12vw, 6.5rem);
-    color: #D4AF37;
-    letter-spacing: 20px;
-    font-weight: 700;
+    font-size: 3rem;
+    color: #C5A059;
+    letter-spacing: 12px;
     text-transform: uppercase;
 }
 
-.gold-line {
-    width: 150px;
-    height: 1px;
-    background-color: #D4AF37;
-    margin: 40px auto;
-    opacity: 0.6;
+.showcase-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
 }
 
-.subtitle {
-    letter-spacing: 10px;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    text-transform: uppercase;
-}
-
-.showcase {
-    display: flex;
-    flex-direction: column;
-    gap: 180px;
-    padding-bottom: 200px;
-}
-
-.product-card {
-    width: 100%;
+.perfume-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
 }
 
-/* FOTOS MONUMENTAIS */
-.product-card img {
+/* O SEGREDO DO TAMANHO: 350px de altura garantidos */
+.image-box {
     width: 100%;
-    max-width: 800px;
-    height: auto;
-    filter: drop-shadow(0 20px 80px rgba(212, 175, 55, 0.2));
-    transition: transform 1s ease;
+    height: 350px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
 }
 
-/* Equilíbrio Visual: Scandal e Olympea um pouco maiores para compensar altura do Idole */
-.product-card:nth-child(1) img,
-.product-card:nth-child(3) img {
-    transform: scale(1.1);
+.image-box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+    transition: transform 0.4s ease;
 }
 
-.product-card:hover img {
-    transform: scale(1.15);
-}
+.perfume-card:hover img { transform: scale(1.05); }
 
 h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 8vw, 3.8rem);
-    color: #D4AF37;
-    margin: 60px 0 20px;
-    letter-spacing: 7px;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #C5A059;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
-/* PREÇO MASTER */
-.price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-    font-weight: 500;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
+.price { font-size: 1.1rem; font-weight: 200; margin-bottom: 20px; }
 
-.price::before {
-    content: "R$ ";
-    color: #D4AF37;
-    font-size: 1.6rem;
-    vertical-align: middle;
-}
-
-.luxury-btn {
+.buy-btn {
     display: inline-block;
-    padding: 25px 100px;
-    border: 1px solid #D4AF37;
-    color: #D4AF37;
+    padding: 12px 35px;
+    border: 1px solid #C5A059;
+    color: #C5A059 !important;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 6px;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    transition: all 0.5s ease;
+    transition: 0.3s;
 }
 
-.luxury-btn:hover {
-    background-color: #D4AF37;
-    color: #000;
-    box-shadow: 0 0 50px rgba(212, 175, 55, 0.5);
-}
+.buy-btn:hover { background: #C5A059; color: #000 !important; }
 
-.footer { padding: 100px; opacity: 0.3; font-size: 0.75rem; letter-spacing: 5px; }
+@media (max-width: 1000px) { .showcase-container { grid-template-columns: 1fr; } }
